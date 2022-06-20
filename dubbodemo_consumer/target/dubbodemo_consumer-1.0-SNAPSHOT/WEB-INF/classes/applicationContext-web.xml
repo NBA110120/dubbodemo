@@ -10,4 +10,5 @@
     <dubbo:annotation package="com.atguigu.controller" />
     <!-- 运行dubbo不检查提供者是否提前开启  -->
     <!-- <dubbo:consumer check="false"></dubbo:consumer> -->
+    <dubbo:consumer check="false"/>
 </beans>

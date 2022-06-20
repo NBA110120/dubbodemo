@@ -1,9 +1,7 @@
 package com.atguigu.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
-import com.atguigu.service.HelloService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.atguigu.servicer.HelloService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/demo")
 public class HelloController {
 
-    @Reference
-    private HelloService helloService;
+    //@Reference  //从2181上订阅服务。注解使用dubbo框架提供的。com.alibaba.dubbo.config.annotation.Reference;
+    @Reference(loadbalance = "roundrobin")
+    private HelloService helloService;//动态代领机制
 
     @RequestMapping("/hello")
     @ResponseBody

@@ -11,6 +11,8 @@
     <modules>
         <module>dubbodemo_provider</module>
         <module>dubbodemo_consumer</module>
+        <module>dubbodemo_interface</module>
+        <module>dubbodemo_provider2</module>
     </modules>
 
     <properties>
